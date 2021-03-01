@@ -1,19 +1,9 @@
 #!/usr/bin/env node
 
 var fs = require("fs")
-var methid = require(".")
 var minimist = require("minimist")
-
-if (!process.argv[1]) throw Error("no method signature")
-
+var methid = require(".")
 var pkg = require("./package.json")
-
-function exit(code) {
-  process.title = ""
-  process.exit(code)
-}
-
-process.title = `${pkg.name} v${pkg.version}`
 
 var argv = minimist(process.argv.slice(2), {
   alias: { help: "h", version: "v" }
@@ -21,7 +11,7 @@ var argv = minimist(process.argv.slice(2), {
 
 if (argv.version) {
   console.log(`${pkg.name} v${pkg.version}`)
-  exit(0)
+  process.exit(0)
 }
 
 if (argv.help) {
@@ -43,7 +33,7 @@ if (argv.help) {
       echo "baz(uint32,bool)" | methid
       `.replace(/^ {4}/gm, "")
   )
-  exit(0)
+  process.exit(0)
 }
 
 fs.fstat(0, function (err, stats) {
