@@ -1,0 +1,39 @@
+{
+  "name": "meth-id",
+  "version": "0.1.0",
+  "description": "func & cli that computes an ethereum method id given its signature",
+  "main": "index.js",
+  "bin": {
+    "methid": "./cli.js"
+  },
+  "scripts": {
+    "test": "node ./test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chiefbiiko/meth-id.git"
+  },
+  "keywords": [
+    "ethereum",
+    "method",
+    "id",
+    "keccak",
+    "hash",
+    "signature",
+    "smart",
+    "contract"
+  ],
+  "author": "Noah Anabiik Schwarz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chiefbiiko/meth-id/issues"
+  },
+  "homepage": "https://github.com/chiefbiiko/meth-id#readme",
+  "devDependencies": {
+    "tape": "5.2.1"
+  },
+  "dependencies": {
+    "keccak": "3.0.1",
+    "minimist": "1.2.5"
+  }
+}
