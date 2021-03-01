@@ -1,5 +1,5 @@
 {
-  "name": "meth-id",
+  "name": "methid",
   "version": "0.1.0",
   "description": "func & cli that computes an ethereum method id given its signature",
   "main": "index.js",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chiefbiiko/meth-id.git"
+    "url": "git+https://github.com/chiefbiiko/methid.git"
   },
   "keywords": [
     "ethereum",
@@ -26,9 +26,9 @@
   "author": "Noah Anabiik Schwarz",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/chiefbiiko/meth-id/issues"
+    "url": "https://github.com/chiefbiiko/methid/issues"
   },
-  "homepage": "https://github.com/chiefbiiko/meth-id#readme",
+  "homepage": "https://github.com/chiefbiiko/methid#readme",
   "devDependencies": {
     "tape": "5.2.1"
   },
