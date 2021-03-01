@@ -1,6 +1,6 @@
 {
   "name": "methid",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "func & cli that computes an ethereum method id given its signature",
   "main": "index.js",
   "bin": {

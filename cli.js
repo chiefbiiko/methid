@@ -22,7 +22,7 @@ if (argv.help) {
 
     Computes an ethereum method id given its signature.
 
-    With no SIGNATURE, or when SIGNATURE is -, read standard input. 
+    Checks stdin for piped data, otherwise assumes SIGNATURE to be set.
 
     Options:
       -h, --help\t\tprint help
