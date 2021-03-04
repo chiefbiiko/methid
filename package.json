@@ -7,7 +7,8 @@
     "methid": "./cli.js"
   },
   "scripts": {
-    "test": "node ./test.js"
+    "test": "node ./test.js",
+    "fmt": "npx standard --fix"
   },
   "repository": {
     "type": "git",

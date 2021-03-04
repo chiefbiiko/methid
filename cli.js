@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 
-var fs = require("fs")
-var minimist = require("minimist")
-var methid = require(".")
-var pkg = require("./package.json")
+const fs = require('fs')
+const minimist = require('minimist')
+const methid = require('.')
+const pkg = require('./package.json')
 
-var argv = minimist(process.argv.slice(2), {
-  alias: { help: "h", version: "v" }
+const argv = minimist(process.argv.slice(2), {
+  alias: { help: 'h', version: 'v' }
 })
 
 if (argv.version) {
@@ -31,7 +31,7 @@ if (argv.help) {
     Examples:
       methid "baz(uint32,bool)"
       echo "baz(uint32,bool)" | methid
-      `.replace(/^ {4}/gm, "")
+      `.replace(/^ {4}/gm, '')
   )
   process.exit(0)
 }
@@ -41,27 +41,27 @@ fs.fstat(0, function (err, stats) {
 
   // if sth gettin piped in
   if (stats.isFIFO()) {
-    var piped = ""
+    let piped = ''
 
-    process.stdin.once("readable", function () {
-      var registeredEndListener = false
-      var chunk = process.stdin.read()
+    process.stdin.once('readable', function () {
+      let registeredEndListener = false
+      const chunk = process.stdin.read()
 
-      if (!chunk) throw Error("no method signature")
+      if (!chunk) throw Error('no method signature')
 
       if (!registeredEndListener) {
         registeredEndListener = true
-        process.stdin.once("end", function () {
+        process.stdin.once('end', function () {
           console.log(methid(piped.trim()))
         })
       }
 
-      piped += chunk.toString("utf8")
+      piped += chunk.toString('utf8')
     })
   } else {
-    var sig = process.argv[process.argv.length - 1]?.trim()
+    const sig = process.argv[process.argv.length - 1]?.trim()
 
-    if (!sig) throw Error("no method signature")
+    if (!sig) throw Error('no method signature')
 
     console.log(methid(sig))
   }
